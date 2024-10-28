@@ -63,3 +63,20 @@ console.log(totalAges/ageCounter);
 let avg = totalAges/ageCounter;
 //I decided to round up as that what you normally do in math when a number is above 5, I prefer whole numbers instead of decimals
 console.log(Math.floor(avg));
+
+console.log("//================================Part 5: Full Circle ======================================");
+//Turning the array back into a CSV friendly format
+console.log(arraydata);
+
+// Extract the headers and join them (',') delimeter
+const goodfriends = Object.keys(arraydata[0]).join(",")
+console.log(goodfriends);
+
+// Creates the rows arrays by turning all the data into strings
+const newrowarray = arraydata.map(obj => Object.values(obj).join(','));
+console.log(newrowarray);
+
+//Combining the headers and rows together and re-uniting together at last
+const reuniteasone = [newrowarray, ...newrowarray].join("\\n");
+console.log(reuniteasone);
+//It all worked as I had hoped.
